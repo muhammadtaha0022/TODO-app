@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-5">
+      <div class="card border-0 shadow-lg">
+        <div class="card-header bg-gradient-primary text-white py-3">
+          <h2 class="h4 mb-0 text-center"><i class="fas fa-sign-in-alt mr-2"></i>Login Here</h2>
+        </div>
+        <div class="card-body p-4">
+          <form action="/login/" method="POST">
+            {% csrf_token %}
+            
+            <div class="mb-4">
+              <label for="id_username" class="form-label text-muted">
+                <i class="fas fa-user mr-2"></i>Username
+              </label>
+              {{ form.username }}
+              {% if form.username.errors %}
+                <div class="invalid-feedback d-block">{{ form.username.errors }}</div>
+              {% endif %}
+            </div>
+            
+            <div class="mb-4">
+              <label for="id_password" class="form-label text-muted">
+                <i class="fas fa-lock mr-2"></i>Password
+              </label>
+              {{ form.password }}
+              {% if form.password.errors %}
+                <div class="invalid-feedback d-block">{{ form.password.errors }}</div>
+              {% endif %}
+            </div>
+            
+            <div class="d-grid mt-4">
+              <button type="submit" class="btn btn-success btn-lg py-2">
+                <i class="fas fa-sign-in-alt mr-2"></i>Login
+              </button>
+            </div>
+            
+            <div class="text-center mt-3">
+              <a href="/signup" class="text-primary">Don't have an account? Sign up</a>
+            </div>
+            
+            {% if form.non_field_errors %}
+              <div class="alert alert-danger mt-3">
+                {{ form.non_field_errors }}
+              </div>
+            {% endif %}
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #1e88e5, #00c853);
+  }
+  
+  .card {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .form-control {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s;
+  }
+  
+  .form-control:focus {
+    border-color: #1e88e5;
+    box-shadow: 0 0 0 0.25rem rgba(30, 136, 229, 0.25);
+  }
+  
+  .btn-success {
+    background-color: #00c853;
+    border: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-success:hover {
+    background-color: #00b04a;
+    transform: translateY(-2px);
+  }
+  
+  .alert-danger {
+    border-radius: 8px;
+  }
+</style>
+{% endblock %}

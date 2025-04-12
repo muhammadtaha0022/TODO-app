@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <div class="card border-0 shadow-lg">
+        <div class="card-header bg-gradient-primary text-white">
+          <h2 class="h4 mb-0 text-center"><i class="fas fa-user-plus mr-2"></i>Create Account</h2>
+        </div>
+        <div class="card-body p-5">
+          <form method="post" action="/signup/">
+            {% csrf_token %}
+            
+            {% for field in form %}
+            <div class="mb-4">
+              <label for="{{ field.id_for_label }}" class="form-label text-muted">
+                <i class="fas fa-{% cycle 'user' 'envelope' 'lock' 'lock' %} mr-2"></i>
+                {{ field.label }}
+              </label>
+              {{ field }}
+              {% if field.help_text %}
+                <small class="form-text text-muted">{{ field.help_text }}</small>
+              {% endif %}
+              {% for error in field.errors %}
+                <div class="invalid-feedback d-block">{{ error }}</div>
+              {% endfor %}
+            </div>
+            {% endfor %}
+            
+            <div class="d-grid mt-4">
+              <button class="btn btn-success btn-lg py-3" type="submit">
+                <i class="fas fa-user-check mr-2"></i>Create Account
+              </button>
+            </div>
+            
+            <div class="text-center mt-4">
+              <p class="text-muted">Already have an account? 
+                <a href="/login" class="text-primary">Login here</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #1e88e5, #00c853);
+  }
+  
+  .card {
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .form-control {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s;
+  }
+  
+  .form-control:focus {
+    border-color: #1e88e5;
+    box-shadow: 0 0 0 0.25rem rgba(30, 136, 229, 0.25);
+  }
+  
+  .btn-success {
+    background-color: #00c853;
+    border: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-success:hover {
+    background-color: #00b04a;
+    transform: translateY(-2px);
+  }
+</style>
+{% endblock %}
