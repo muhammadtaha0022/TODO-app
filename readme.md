@@ -29,26 +29,26 @@ cd TODO-app
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 ```
-### Run migrations
+### how to  Run migrations
 ```
 python manage.py migrate
 ```
 
-### Create superuser (optional)
+### Create superuser (optional) 
 ```
 python manage.py createsuperuser
 ```
 
-### Run the development server
+### Run the development server 
 ```
 python manage.py runserver
 ```
 
 
 
-## 📞 Contact Information
+## 📞 Contact Information 
 
-### Direct Contacts
+### Direct Contacts 
 - **Mobile:** [+92 301 0224443](tel:+923010224443)
 - **WhatsApp:** [+92 301 0224443](https://wa.me/923010224443)
 - **Email:** [muhammadtaha00224443@gmail.com](mailto:muhammadtaha00224443@gmail.com)
