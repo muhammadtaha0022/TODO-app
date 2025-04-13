@@ -1,58 +1,45 @@
-# TODO App
+# 📝 TODO App - Your Productivity Companion  
 
-A simple and elegant TODO application built with Django and Bootstrap.
+![TODO App Screenshot](photo/todoo.png)  
+*A sleek, intuitive task management solution built with Django and Bootstrap*  
 
-![TODO App Screenshot](photo\todoo.png)
+---
 
-## Features
+## ✨ Features  
 
-- User authentication (Login/Signup)
-- Create, view, and manage tasks
-- Mark tasks as complete/incomplete
-- Set task priorities
-- Clean and responsive UI
+✔ **User Authentication** - Secure login/signup system  
+✔ **Task Management** - Create, edit, delete tasks with ease  
+✔ **Priority Control** - ⚡ High | ⏳ Medium | 💤 Low priority tagging  
+✔ **Completion Tracking** - Check-off completed items  
+✔ **Responsive Design** - Works flawlessly on all devices  
 
-## Installation
+---
 
-### Prerequisites
-- Python 3.8+
-- pip
-- virtualenv (recommended)
+## 🛠 Installation  
 
-### Clone the repository
+### Prerequisites  
+- Python 3.8+ 🐍  
+- pip 📦  
+- virtualenv (recommended)  
+
+### 🚀 Quick Start  
 ```bash
+# Clone repository
 git clone https://github.com/muhammadtaha0022/TODO-app.git
 cd TODO-app
-```
-### Set up virtual environment (recommended)
-```
+
+# Setup virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-```
-### how to  Run migrations
-```
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Configure database
 python manage.py migrate
-```
 
-### Create superuser (optional) 
-```
+# Create admin (optional)
 python manage.py createsuperuser
-```
 
-### Run the development server 
-```
+# Launch application
 python manage.py runserver
-```
-
-
-
-## 📞 Contact Information 
-
-### Direct Contacts 
-- **Mobile:** [+92 301 0224443](tel:+923010224443)
-- **WhatsApp:** [+92 301 0224443](https://wa.me/923010224443)
-- **Email:** [muhammadtaha00224443@gmail.com](mailto:muhammadtaha00224443@gmail.com)
-
-### Professional Profiles
-- **LinkedIn:** [Muhammad Taha](https://www.linkedin.com/in/muhammad-taha-taha)
-- **GitHub:** [muhammadtaha0022](https://github.com/muhammadtaha0022)
